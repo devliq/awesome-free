@@ -28,4 +28,4 @@ Thumbs.db
 *.log
 
 # KiloCode
-.kilocode-instructions.md
+.kilocode/prompts.md

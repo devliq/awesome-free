@@ -1,0 +1,104 @@
+{
+  "$schema": "https://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "stack": {
+      "type": "object",
+      "properties": {
+        "name": {
+          "type": "string",
+          "description": "Human-readable name of the stack"
+        },
+        "category": {
+          "type": "string",
+          "description": "Stack category"
+        },
+        "description": {
+          "type": "string",
+          "description": "Brief description of the stack"
+        },
+        "services": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "service_id": {
+                "type": "string",
+                "description": "ID of the service"
+              },
+              "role": {
+                "type": "string",
+                "description": "Role of the service in the stack"
+              },
+              "config": {
+                "type": "string",
+                "description": "Configuration details"
+              },
+              "free_estimate": {
+                "type": "string",
+                "description": "Free tier estimate"
+              }
+            },
+            "required": ["service_id", "role", "config", "free_estimate"]
+          }
+        },
+        "total_monthly_cost": {
+          "type": "string",
+          "description": "Estimated total monthly cost"
+        },
+        "estimated_capacity": {
+          "type": "string",
+          "description": "Estimated capacity"
+        },
+        "pros": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "cons": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "alternatives": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "properties": {
+              "name": {
+                "type": "string"
+              },
+              "cost": {
+                "type": "string"
+              },
+              "pros": {
+                "type": "string"
+              },
+              "cons": {
+                "type": "string"
+              }
+            },
+            "required": ["name", "cost", "pros", "cons"]
+          }
+        },
+        "getting_started": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "resources": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "format": "uri"
+          }
+        }
+      },
+      "required": ["name", "category", "description", "services", "total_monthly_cost", "estimated_capacity", "pros", "cons", "alternatives", "getting_started", "resources"]
+    }
+  },
+  "required": ["stack"]
+}

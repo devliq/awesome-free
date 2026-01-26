@@ -1,0 +1,65 @@
+service:
+  id: "aws-lambda"
+  name: "AWS Lambda"
+  provider: "AWS"
+  category: "serverless"
+  url: "https://aws.amazon.com/lambda/"
+  free_tier:
+    type: "always-free"
+    always_free:
+      included: true
+      limits:
+        - "1M requests/month"
+        - "400,000 GB-seconds compute time/month"
+      duration: "Always"
+  regions:
+    always_free:
+      - "All AWS regions"
+    note: ""
+  gotchas:
+    - "Cold starts can add latency"
+    - "Regional pricing differences"
+    - "VPC networking incurs additional costs"
+    - "Function timeout limit of 15 minutes"
+  best_for:
+    - "Event-driven applications"
+    - "API backends"
+    - "Data processing tasks"
+    - "Microservices"
+  not_for:
+    - "Long-running processes (>15 minutes)"
+    - "High memory requirements without optimization"
+    - "Applications requiring persistent connections"
+  complementary_services:
+    - service_id: "aws-api-gateway"
+      notes: "For creating HTTP APIs that trigger Lambda functions"
+    - service_id: "aws-dynamodb"
+      notes: "For serverless NoSQL database storage"
+    - service_id: "aws-s3"
+      notes: "For storing function code and static assets"
+  cost:
+    under_free_tier: "$0"
+    typical_after_free: "$0.20 per 1M requests + $0.0000166667 per GB-second"
+    scaling_trajectory: "Pay per execution and compute time"
+  requirements:
+    credit_card: false
+    phone_verification: false
+    identity_verification: false
+    minimum_age: 18
+    geography_restrictions: "Subject to AWS sanctions and export controls"
+  resources:
+    official_docs: "https://docs.aws.amazon.com/lambda/"
+    free_tier_page: "https://aws.amazon.com/free/free-tier/"
+    tutorial: "https://aws.amazon.com/getting-started/hands-on/run-serverless-code/"
+    community: "https://aws.amazon.com/developer/community/"
+  metadata:
+    last_verified: "2026-01-26"
+    verified_by: "Kilo Code"
+    source: "AWS official documentation"
+    notes: ""
+  flags:
+    time_sensitive: false
+    cost_risk: "low"
+    vendor_lock_in: "medium"
+    learning_curve: "medium"
+    setup_time: 15

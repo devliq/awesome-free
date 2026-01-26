@@ -130,6 +130,29 @@ Python and Bash scripts for:
 - Responsive issue resolution
 - Educational value for cloud-native development
 
+## Project History
+
+### Methodology Evolution
+
+#### Evaluation Criteria Development
+- **2023**: Added cost risk assessment and vendor lock-in analysis to identify hidden charges and migration challenges
+- **2022**: Introduced setup time and learning curve metrics to evaluate developer experience
+- **2021**: Initial criteria focused on free tier limits, availability, and basic service viability
+
+#### Data Collection Methods
+- **2023**: Automated web scraping with manual verification for efficiency and accuracy
+- **2022**: Manual research enhanced by community contributions and peer review
+- **2021**: Initial manual catalog creation with basic documentation review
+
+#### Schema Evolution
+- **v3.0 (2023)**: Added cost risk flags and vendor lock-in metrics
+- **v2.0 (2022)**: Introduced cost analysis and gotchas documentation
+- **v1.0 (2021)**: Basic service metadata and free tier limits
+
+### Historical Evaluations
+
+Detailed service evaluations from past quarters are archived in [`docs/historical-evaluations/`](./historical-evaluations/) for reference and methodology tracking.
+
 ## Future Vision
 
 ### Expansion Areas

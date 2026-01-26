@@ -1,0 +1,50 @@
+# Discontinued Services
+# This file tracks services that are no longer free or have been discontinued
+# Each entry includes the service ID, sunset date, and reason for discontinuation
+
+discontinued:
+  - id: "heroku-free-tier"
+    name: "Heroku Free Tier"
+    provider: "Heroku"
+    category: "compute"
+    sunset_date: "2022-11-28"
+    reason: "Heroku discontinued free tier to focus on enterprise customers"
+    notes: "Free dynos, databases, and add-ons were available for hobby projects"
+    last_free_tier: "always-free"
+    alternative_services:
+      - "render"
+      - "fly-io"
+      - "railway"
+
+  - id: "firebase-spark"
+    name: "Firebase Spark Plan"
+    provider: "Google"
+    category: "database"
+    sunset_date: "2020-08-17"
+    reason: "Replaced with Blaze plan which requires billing account for new projects"
+    notes: "Limited free usage with strict limits, now requires payment method on file"
+    last_free_tier: "always-free"
+    alternative_services:
+      - "supabase"
+      - "planetscale"
+      - "mongodb-atlas"
+
+  - id: "parse"
+    name: "Parse"
+    provider: "Facebook"
+    category: "database"
+    sunset_date: "2017-01-28"
+    reason: "Service shutdown by Facebook after acquisition"
+    notes: "Popular Backend-as-a-Service platform for mobile apps"
+    last_free_tier: "always-free"
+    alternative_services:
+      - "firebase"
+      - "supabase"
+      - "back4app"
+
+# Notes:
+# - sunset_date: Date when the free tier was discontinued (YYYY-MM-DD)
+# - reason: Brief explanation of why it was discontinued
+# - notes: Additional context or details
+# - last_free_tier: The type of free tier that was available
+# - alternative_services: List of current free alternatives (service IDs)

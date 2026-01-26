@@ -34,12 +34,14 @@ def load_services():
     return services
 
 def is_stale(last_verified_str):
+    if not last_verified_str:
+        return True  # If empty or None, consider stale
     try:
         last_verified = datetime.strptime(last_verified_str, '%Y-%m-%d')
         six_months_ago = datetime.now() - timedelta(days=180)
         return last_verified < six_months_ago
-    except ValueError:
-        return True  # If date format wrong, consider stale
+    except (ValueError, TypeError):
+        return True  # If date format wrong or not a string, consider stale
 
 def main():
     services = load_services()

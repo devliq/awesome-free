@@ -1,0 +1,69 @@
+service:
+  id: "github-actions"
+  name: "GitHub Actions"
+  provider: "GitHub"
+  category: "devtools"
+  url: "https://github.com/features/actions"
+  free_tier:
+    type: "always-free"
+    always_free:
+      included: true
+      limits:
+        - "2,000 minutes/month for public repositories"
+        - "500 MB storage for GitHub Packages and Large File Storage"
+        - "No minute limits for public repositories"
+      duration: "Always"
+  regions:
+    always_free:
+      - "Global"
+    note: "Runs on GitHub-hosted runners in Microsoft Azure data centers"
+  gotchas:
+    - "Private repositories limited to 2,000 minutes/month"
+    - "Storage limits for packages and large files"
+    - "No self-hosted runners in free tier"
+    - "Concurrent job limits (20 for public repos, 1 for free private repos)"
+    - "No access to larger runner types (2-64 vCPUs)"
+  best_for:
+    - "CI/CD pipelines for open source projects"
+    - "Automated testing and linting"
+    - "Deployment automation"
+    - "Code quality checks"
+    - "Documentation generation"
+  not_for:
+    - "Heavy workloads requiring long build times"
+    - "Private repositories with high CI/CD usage"
+    - "Projects needing custom hardware or software"
+    - "Large-scale parallel testing"
+  complementary_services:
+    - service_id: "github-pages"
+      notes: "For hosting static websites directly from repositories"
+    - service_id: "github-packages"
+      notes: "For hosting and sharing packages within the GitHub ecosystem"
+    - service_id: "github-dependabot"
+      notes: "For automated dependency updates and security alerts"
+  cost:
+    under_free_tier: "$0"
+    typical_after_free: "$0.008 per minute for Linux/Windows, $0.016 per minute for macOS"
+    scaling_trajectory: "Pay per minute of compute time used"
+  requirements:
+    credit_card: false
+    phone_verification: false
+    identity_verification: false
+    minimum_age: 13
+    geography_restrictions: "None"
+  resources:
+    official_docs: "https://docs.github.com/en/actions"
+    free_tier_page: "https://github.com/pricing"
+    tutorial: "https://docs.github.com/en/actions/quickstart"
+    community: "https://github.community/c/code-to-cloud/github-actions/41"
+  metadata:
+    last_verified: "2026-01-26"
+    verified_by: "Kilo Code"
+    source: "GitHub official documentation"
+    notes: ""
+  flags:
+    time_sensitive: false
+    cost_risk: "low"
+    vendor_lock_in: "low"
+    learning_curve: "low"
+    setup_time: 10

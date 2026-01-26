@@ -1,0 +1,72 @@
+service:
+  id: "cloudflare-cdn"
+  name: "Cloudflare CDN"
+  provider: "Cloudflare"
+  category: "cdn-edge"
+  url: "https://www.cloudflare.com/cdn/"
+  free_tier:
+    type: "always-free"
+    always_free:
+      included: true
+      limits:
+        - "100 GB/month bandwidth"
+        - "No request limits"
+        - "Basic DDoS protection"
+        - "SSL/TLS encryption"
+      duration: "Always"
+  regions:
+    always_free:
+      - "Global"
+    note: "200+ data centers worldwide with automatic routing"
+  gotchas:
+    - "100 GB bandwidth limit per month"
+    - "No image optimization or transformation in free tier"
+    - "No advanced security features (WAF, Bot Management)"
+    - "No custom SSL certificates"
+    - "Domain must be proxied through Cloudflare (changes DNS)"
+    - "Limited analytics and reporting"
+  best_for:
+    - "Static asset delivery (images, CSS, JS)"
+    - "Website acceleration and performance optimization"
+    - "Global content distribution"
+    - "Basic DDoS protection"
+    - "SSL certificate provisioning"
+  not_for:
+    - "High-traffic websites (>100 GB/month)"
+    - "Applications requiring advanced security features"
+    - "Dynamic content heavy sites"
+    - "E-commerce sites needing PCI compliance features"
+    - "Sites requiring custom SSL certificates"
+  complementary_services:
+    - service_id: "cloudflare-pages"
+      notes: "For hosting static websites with automatic deployments"
+    - service_id: "cloudflare-workers"
+      notes: "For serverless functions at the edge"
+    - service_id: "cloudflare-r2"
+      notes: "For object storage with CDN integration"
+  cost:
+    under_free_tier: "$0"
+    typical_after_free: "$0.10 per GB for bandwidth over 100 GB"
+    scaling_trajectory: "Pay per GB of bandwidth used beyond free tier"
+  requirements:
+    credit_card: false
+    phone_verification: false
+    identity_verification: false
+    minimum_age: 13
+    geography_restrictions: "None"
+  resources:
+    official_docs: "https://developers.cloudflare.com/fundamentals/get-started/"
+    free_tier_page: "https://www.cloudflare.com/plans/free/"
+    tutorial: "https://developers.cloudflare.com/fundamentals/get-started/setup/"
+    community: "https://discord.com/invite/cloudflare"
+  metadata:
+    last_verified: "2026-01-26"
+    verified_by: "Kilo Code"
+    source: "Cloudflare official documentation"
+    notes: "Updated community link from Cloudflare community forum to Discord server due to access restrictions"
+  flags:
+    time_sensitive: false
+    cost_risk: "low"
+    vendor_lock_in: "low"
+    learning_curve: "low"
+    setup_time: 5

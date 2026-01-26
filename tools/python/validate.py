@@ -20,6 +20,8 @@ def validate_yaml_file(yaml_file, schema):
             data = yaml.safe_load(f)
         validate(instance=data, schema=schema)
         return True, None
+    except FileNotFoundError as e:
+        return False, f"File not found: {e}"
     except yaml.YAMLError as e:
         return False, f"YAML Error: {e}"
     except ValidationError as e:

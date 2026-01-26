@@ -147,6 +147,20 @@ Difficulty migrating away from the service.
 - Services promoting spam/scams
 - Dark web or anonymous access required
 
+### Examples of Exclusions
+
+#### Heroku Free Tier (Discontinued 2022)
+- **Decision**: Not included due to discontinuation
+- **Reason**: Heroku ended their free tier in November 2022
+- **Evaluation**: Originally evaluated in historical records
+- **Alternative**: Consider Railway, Render, or Fly.io
+
+#### Firebase Spark Plan Limitations
+- **Decision**: Limited inclusion due to restrictive quotas
+- **Reason**: Daily limits too low for practical development use
+- **Evaluation**: Reviewed for potential inclusion with updated limits
+- **Status**: Under review for future consideration
+
 ## Documentation Standards
 
 ### Required Fields for Every Service

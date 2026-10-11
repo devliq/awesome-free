@@ -3,12 +3,17 @@ updates:
   - package-ecosystem: "pip"
     directory: "/tools/python"
     schedule:
-      interval: "weekly"
-    open-pull-requests-limit: 10
-    reviewers:
-      - "your-github-username"  # Replace with actual reviewer
-    assignees:
-      - "your-github-username"  # Replace with actual assignee
+      interval: "monthly"
+    # Small surface, no CI on tests: one grouped PR per month max, minors and
+    # patches batched. Majors still open individually for human review.
+    open-pull-requests-limit: 5
+    groups:
+      python-minor:
+        patterns:
+          - "*"
+        update-types:
+          - "minor"
+          - "patch"
     commit-message:
       prefix: "deps"
       include: "scope"
